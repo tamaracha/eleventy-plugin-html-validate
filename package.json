@@ -16,19 +16,26 @@
   "keywords": [
     "eleventy",
     "html-validate",
-    "plugin"
+    "eleventy-plugin"
   ],
-  "author": "Tamara Cook",
+  "author": "Tamara Cook <10754072+tamaracha@users.noreply.github.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tamaracha/eleventy-plugin-html-validate/issues"
   },
   "homepage": "https://github.com/tamaracha/eleventy-plugin-html-validate#readme",
+  "engines": {
+    "node": ">=14"
+  },
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "html-validate": "^7.18.0",
     "picomatch": "^2.3.1"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
     "eslint": "^8.41.0",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.27.5",
