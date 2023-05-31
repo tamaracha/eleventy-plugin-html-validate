@@ -1,0 +1,3 @@
+'*': 'prettier -w -u'
+'*.js': eslint
+'*.md': 'markdownlint-cli2'
