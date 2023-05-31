@@ -4,9 +4,9 @@ const pm = require('picomatch')
 const CONFIG_PATTERN = '.htmlvalidate.(js|cjs|json)'
 const CONFIG_PATTERN_R = pm(CONFIG_PATTERN)
 
-module.exports = function (eleventyConfig, { style } = { style: 'text' }) {
-  const htmlValidate = new HtmlValidate(new FileSystemConfigLoader())
-  const formatter = formatterFactory(style)
+module.exports = function (eleventyConfig, { config, format } = { format: 'text' }) {
+  const htmlValidate = new HtmlValidate(new FileSystemConfigLoader(config))
+  const formatter = formatterFactory(format)
   eleventyConfig.addWatchTarget(CONFIG_PATTERN)
   eleventyConfig.on('eleventy.beforeWatch', async (changedFiles) => {
     if (changedFiles.some((f) => CONFIG_PATTERN_R(f))) {
