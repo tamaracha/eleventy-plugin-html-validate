@@ -31,7 +31,7 @@
     "index.js"
   ],
   "dependencies": {
-    "html-validate": "^7.18.0",
+    "html-validate": "^8.0.0",
     "picomatch": "^2.3.1"
   },
   "devDependencies": {

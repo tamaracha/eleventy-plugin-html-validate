@@ -14,9 +14,11 @@ module.exports = function (eleventyConfig, { config, format } = { format: 'text'
     }
   })
   eleventyConfig.on('eleventy.after', async function ({ results }) {
-    const reports = results
-      .filter((r) => r.outputPath.endsWith('.html'))
-      .map((r) => htmlValidate.validateString(r.content, r.outputPath))
+    const reports = await Promise.all(
+      results
+        .filter((r) => r.outputPath.endsWith('.html'))
+        .map((r) => htmlValidate.validateString(r.content, r.outputPath))
+    )
     const report = Reporter.merge(reports)
     if (!report.valid) {
       console.log(formatter(report.results))
