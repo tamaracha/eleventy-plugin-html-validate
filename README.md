@@ -15,13 +15,22 @@ This plugin …
 
 ## Usage
 
+First, create a [HTML-validate] config file in your project as described in the [usage guide].
+This could be, e.g., a `.htmlvalidate.js`:
+
+```js
+module.exports = {
+  extends: ['html-validate:recommended'],
+  elements: ['html5']
+}
+```
+
 In your eleventy config, add the plugin and optionally supply your preferred report style:
 
 ```js
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(require('eleventy-plugin-html-validate'), {
-    format: 'stylish',
-    config: { extends: ['html-validate:recommended'] }
+    format: 'stylish'
   })
   return {}
 }
@@ -33,8 +42,7 @@ This is because I want it to run after transforms have finished.
 ## Configuration
 
 The plugin looks for the official HTML-validate configuration files as described in their [usage guide].
-Static config can be given in the plugin options as shown in the example above.
-It is merged with the config files.
+You can put different config files in the subfolders of your source templates, the plugin looks them up from the linted file's input path.
 
 ## License
 
