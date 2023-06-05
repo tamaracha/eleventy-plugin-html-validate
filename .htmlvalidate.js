@@ -1,3 +1,4 @@
 module.exports = {
-  extends: ['html-validate:document']
+  extends: ['html-validate:recommended'],
+  elements: ['html5']
 }
